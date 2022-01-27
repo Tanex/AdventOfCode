@@ -2,10 +2,10 @@
 OUTPUT_DIR = ./bin/
 
 setup:
-	mkdir ${OUTPUT_DIR}
+	mkdir -p ${OUTPUT_DIR}
 
-build: setup main.cpp
-	g++ main.cpp -o ${OUTPUT_DIR}main.out
+build: setup main.cpp file_reader.cpp
+	g++ main.cpp file_reader.cpp -o ${OUTPUT_DIR}main.out
 
 run: build
 	${OUTPUT_DIR}main.out
